@@ -20,15 +20,15 @@ final ThemeData miraLightTheme = ThemeData(
   colorScheme: ColorScheme.light(
     primary: MiraColors.verdeEscuro,
     secondary: MiraColors.areiaDourada,
-    background: MiraColors.offWhite,
     surface: Colors.white,
     onPrimary: Colors.white,
-    onSecondary: Colors.black,
+    onSecondary: Color(0xFF1C1C1E),
   ),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
       color: MiraColors.verdeEscuro,
       fontWeight: FontWeight.bold,
+      fontFamily: 'Nunito',
     ),
     bodyMedium: TextStyle(color: MiraColors.cinzaFume),
   ),
@@ -37,7 +37,7 @@ final ThemeData miraLightTheme = ThemeData(
 final ThemeData miraDarkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: MiraColors.verdeSalvia,
-  scaffoldBackgroundColor: Colors.black,
+  scaffoldBackgroundColor: Color(0xFF1C1C1E),
   appBarTheme: AppBarTheme(
     backgroundColor: MiraColors.verdeEscuro,
     foregroundColor: MiraColors.offWhite,
@@ -46,15 +46,15 @@ final ThemeData miraDarkTheme = ThemeData(
   colorScheme: ColorScheme.dark(
     primary: MiraColors.verdeSalvia,
     secondary: MiraColors.areiaDourada,
-    background: Colors.black,
     surface: MiraColors.verdeEscuro,
-    onPrimary: Colors.black,
+    onPrimary: Color(0xFF1C1C1E),
     onSecondary: Colors.white,
   ),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
       color: MiraColors.offWhite,
       fontWeight: FontWeight.bold,
+      fontFamily: 'Nunito',
     ),
     bodyMedium: TextStyle(color: MiraColors.areiaDourada),
   ),

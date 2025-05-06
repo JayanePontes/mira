@@ -15,43 +15,60 @@ class ChartBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        FittedBox(
-          child: Text(
-            value.toStringAsFixed(2),
-            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-            softWrap: false,
-          ),
-        ),
-        const SizedBox(height: 5),
-        Container(
-          height: 60,
-          width: 10,
-          decoration: BoxDecoration(
-            color: MiraColors.areiaDourada,
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: FractionallySizedBox(
-            alignment: Alignment.bottomCenter,
-            heightFactor: percent,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(5),
+    return LayoutBuilder(
+      builder: (contexto, constraints) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 6),
+              height: constraints.maxHeight * 0.15,
+              child: FittedBox(
+                child: Text(
+                  value.toStringAsFixed(2),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                  softWrap: false,
+                ),
               ),
             ),
-          ),
-        ),
-        const SizedBox(height: 5),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-      ],
+            Container(
+              height: constraints.maxHeight * 0.6,
+              width: 10,
+              decoration: BoxDecoration(
+                color: MiraColors.areiaDourada,
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: FractionallySizedBox(
+                alignment: Alignment.bottomCenter,
+                heightFactor: percent,
+                child: Container(
+                  width: 10,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 6),
+              height: constraints.maxHeight * 0.15,
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }
